@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thuvien>
+    <sach>
+        <title>Lập Trình Python Cơ Bản</title>
+        <author>Nguyễn Văn A</author>
+        <year>2021</year>
+        <genre>Công nghệ</genre>
+    </sach>
+    <sach>
+        <title>Học Máy và Trí Tuệ Nhân Tạo</title>
+        <author>Trần Thị B</author>
+        <year>2022</year>
+        <genre>Khoa học</genre>
+    </sach>
+    <sach>
+        <title>Văn Học Việt Nam Hiện Đại</title>
+        <author>Lê Văn C</author>
+        <year>2019</year>
+        <genre>Văn học</genre>
+    </sach>
+</thuvien>
