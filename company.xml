@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<company xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="company.xsd">
+    
+    <order id="E001">
+        <product id="P001">            
+            <name>Pen</name>
+            <account>10</account>
+        </product>
+        <product id="B001">            
+            <name>Book</name>
+            <account>10</account>
+        </product>
+    </order>
+    
+    <order id="E002">
+        <product id="I001">
+            <name>iPhone 17 Pro Max</name>
+            <account>20</account>
+        </product>
+        <product id="M002">
+            <name>Macbook Pro 2021</name>
+            <account>20</account>
+        </product>
+    </order>
+    
+</company>
