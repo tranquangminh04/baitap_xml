@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:noNamespaceSchemaLocation="student_key.xsd">
+    
+    <student>
+        <studentid>s001</studentid>
+        <name>nguyen van a</name>
+        <classid>c01</classid>
+    </student>
+    
+    <student>
+        <studentid>s002</studentid>
+        <name>tran thi b</name>
+        <classid>c02</classid>
+    </student>
+    
+    <student>
+        <studentid>s003</studentid>
+        <name>le van c</name>
+        <classid>c01</classid>
+    </student>
+    
+    <class>
+        <classid>c01</classid>
+        <classname>cntt</classname>
+    </class>
+    
+    <class>
+        <classid>c02</classid>
+        <classname>ktpm</classname>
+    </class>
+</students>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.com/quanan"
+           xmlns="http://example.com/quanan"
+           elementFormDefault="qualified">
+    
+    <xs:simpleType name="usernameType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="6"/>
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="passwordType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="10"/>
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="quanan">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="taikhoan" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="username" type="usernameType"/>
+                            <xs:element name="password" type="passwordType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="monan" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="mamon" type="xs:string"/>
+                            <xs:element name="tenmon" type="xs:string"/>
+                            <xs:element name="gia" type="xs:decimal"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="donhang" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="madon" type="xs:string"/>
+                            <xs:element name="username" type="usernameType"/>
+                            <xs:element name="mamon" type="xs:string"/>
+                            <xs:element name="soluong" type="xs:integer"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <!-- khoa chinh -->
+        <xs:key name="tk_key">
+            <xs:selector xpath="taikhoan"/>
+            <xs:field xpath="username"/>
+        </xs:key>
+        
+        <xs:key name="mon_key">
+            <xs:selector xpath="monan"/>
+            <xs:field xpath="mamon"/>
+        </xs:key>
+        
+        <!-- khoa ngoai -->
+        <xs:keyref name="dh_tk_ref" refer="tk_key">
+            <xs:selector xpath="donhang"/>
+            <xs:field xpath="username"/>
+        </xs:keyref>
+        
+        <xs:keyref name="dh_mon_ref" refer="mon_key">
+            <xs:selector xpath="donhang"/>
+            <xs:field xpath="mamon"/>
+        </xs:keyref>
+        
+    </xs:element>
+</xs:schema>

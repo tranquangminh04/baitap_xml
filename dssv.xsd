@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <!-- dinh nghia kieu dung chung -->
+    <xs:simpleType name="maType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="tenType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="50"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="sdtType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="0[0-9]{9}"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="dssv">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="khoa" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="makhoa" type="maType"/>
+                            <xs:element name="tenkhoa">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:pattern value="[a-z]+"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="lop" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="malop" type="maType"/>
+                            <xs:element name="tenlop" type="tenType"/>
+                            <xs:element name="makhoa" type="maType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <xs:element name="sinhvien" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="masv" type="maType"/>
+                            <xs:element name="hoten" type="tenType"/>
+                            <xs:element name="sdt" type="sdtType"/>
+                            <xs:element name="malop" type="maType"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <!-- khoa chinh -->
+        <xs:key name="khoa_key">
+            <xs:selector xpath="khoa"/>
+            <xs:field xpath="makhoa"/>
+        </xs:key>
+        
+        <xs:key name="lop_key">
+            <xs:selector xpath="lop"/>
+            <xs:field xpath="malop"/>
+        </xs:key>
+        
+        <!-- khoa ngoai -->
+        <xs:keyref name="lop_khoa_ref" refer="khoa_key">
+            <xs:selector xpath="lop"/>
+            <xs:field xpath="makhoa"/>
+        </xs:keyref>
+        
+        <xs:keyref name="sv_lop_ref" refer="lop_key">
+            <xs:selector xpath="sinhvien"/>
+            <xs:field xpath="malop"/>
+        </xs:keyref>
+        
+    </xs:element>
+</xs:schema>

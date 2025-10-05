@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<quanan xmlns="http://example.com/quanan"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://example.com/quanan quanan.xsd">
+    
+    <taikhoan>
+        <username>admin01</username>
+        <password>1234567890</password>
+    </taikhoan>
+    <taikhoan>
+        <username>user01</username>
+        <password>abcdef1234</password>
+    </taikhoan>
+    
+    <monan>
+        <mamon>m01</mamon>
+        <tenmon>com rang</tenmon>
+        <gia>35000</gia>
+    </monan>
+    <monan>
+        <mamon>m02</mamon>
+        <tenmon>pho bo</tenmon>
+        <gia>45000</gia>
+    </monan>
+    
+    <donhang>
+        <madon>d001</madon>
+        <username>user01</username>
+        <mamon>m01</mamon>
+        <soluong>2</soluong>
+    </donhang>
+    
+    <donhang>
+        <madon>d002</madon>
+        <username>admin01</username>
+        <mamon>m02</mamon>
+        <soluong>1</soluong>
+    </donhang>
+    
+</quanan>

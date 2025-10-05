@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dssv xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="dssv.xsd">
+    
+    <khoa>
+        <makhoa>kh01</makhoa>
+        <tenkhoa>congnghe</tenkhoa>
+    </khoa>
+    <khoa>
+        <makhoa>kh02</makhoa>
+        <tenkhoa>kinhte</tenkhoa>
+    </khoa>
+    
+    <lop>
+        <malop>lp01</malop>
+        <tenlop>cntt1</tenlop>
+        <makhoa>kh01</makhoa>
+    </lop>
+    <lop>
+        <malop>lp02</malop>
+        <tenlop>qtkd</tenlop>
+        <makhoa>kh02</makhoa>
+    </lop>
+    
+    <sinhvien>
+        <masv>sv001</masv>
+        <hoten>nguyen van a</hoten>
+        <sdt>0912345678</sdt>
+        <malop>lp01</malop>
+    </sinhvien>
+    <sinhvien>
+        <masv>sv002</masv>
+        <hoten>tran thi b</hoten>
+        <sdt>0987654321</sdt>
+        <malop>lp02</malop>
+    </sinhvien>
+    
+</dssv>
